@@ -1,0 +1,1 @@
+extension DurationExtension on Duration {}

@@ -1,0 +1,1 @@
+extension NumNullableExtension on num {}
