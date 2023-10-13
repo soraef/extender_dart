@@ -14,12 +14,13 @@ void main() {
     });
 
     test('isYesterday', () {
-      expect(DateTime.now().subtract(Duration(days: 1)).isYesterday, isTrue);
+      expect(
+          DateTime.now().subtract(const Duration(days: 1)).isYesterday, isTrue);
       expect(DateTime.now().isYesterday, isFalse);
     });
 
     test('isTomorrow', () {
-      expect(DateTime.now().add(Duration(days: 1)).isTomorrow, isTrue);
+      expect(DateTime.now().add(const Duration(days: 1)).isTomorrow, isTrue);
       expect(DateTime.now().isTomorrow, isFalse);
     });
 
@@ -98,7 +99,7 @@ void main() {
     test('dayOfYear', () {
       final date = DateTime(2023, 1, 1);
       expect(date.dayOfYear, 1);
-      expect(date.add(Duration(days: 1)).dayOfYear, 2);
+      expect(date.add(const Duration(days: 1)).dayOfYear, 2);
     });
 
     test('isSameYearAs', () {
@@ -131,8 +132,8 @@ void main() {
 
     test('isFuture and isPast', () {
       final now = DateTime.now();
-      final futureDate = now.add(Duration(seconds: 1));
-      final pastDate = now.subtract(Duration(seconds: 1));
+      final futureDate = now.add(const Duration(seconds: 1));
+      final pastDate = now.subtract(const Duration(seconds: 1));
       expect(futureDate.isFuture, isTrue);
       expect(pastDate.isPast, isTrue);
     });
