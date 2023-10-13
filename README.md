@@ -25,10 +25,6 @@ pub get
 
 ## Usage
 
-### Common Operations
-
-... [Insert previous examples if any]
-
 ### Aliases
 
 #### Int Aliases
