@@ -22,3 +22,6 @@ export 'src/extensions/double_extension.dart';
 export 'src/extensions/double_nullable_extension.dart';
 
 export 'src/extensions/universal_extension.dart';
+
+export 'src/classes/sort_order.dart';
+export 'src/classes/console_text.dart';
