@@ -1,4 +1,7 @@
+[English](/README.md) | [日本語](/docs/translations/ja/README.md)
+
 # Extender Dart
+
 
 `Extender Dart` is a utility library for Dart developers. It offers a range of commonly used operations and aliases, including extensions for Lists and Maps to perform immutable add, remove, update, and insert operations. Designed to streamline everyday tasks, this library helps prevent accidental in-place modifications.
 
@@ -125,6 +128,70 @@ List<int?> numbersWithNulls = [1, 3, null, null, 2];
 numbersWithNulls.sort(SortOrder.nullsFirst); // [null, null, 1, 2, 3]
 numbersWithNulls.sort(SortOrder.nullsLast);  // [1, 2, 3, null, null]
 ```
+
+### Displaying on the Console
+
+`ConsoleText` is a tool designed to display color-coded text in the console during debugging sessions. Below are the features it offers, accompanied by sample code for each.
+
+The `ConsoleText` class can be created by calling the styled method, which is an extension of type `String`.
+
+### Color-coded Text
+
+You can apply various colors to both the text and its background.
+
+**Sample Code**:
+```dart
+print("Success".styled.green);  // Green text
+print("Warning".styled.bgRed.white); // White text with a red background
+```
+
+![Result](docs/img/console_text_1.png)
+
+### Text Styling
+
+You can adjust the text's weight and style, including options like bold, italic, and underline.
+
+**Sample Code**:
+```dart
+print("Bold Text".styled.bold);  // Bold
+print("Italic Text".styled.italic);  // Italicized
+print("Underlined Text".styled.underline);  // Underlined
+```
+![Result](docs/img/console_text_2.png)
+
+### Text Bordering
+
+You can emphasize your text by surrounding it with borders.
+
+**Sample Code**:
+```dart
+print("Bordered Text".styled.bordered());  // With border
+print("Thick Border".styled.bordered(style: BorderStyle.thick()));  // With a thick border
+print("Dotted Border".styled.bordered(style: BorderStyle.dotted()));  // With a dotted border
+```
+
+![Result](docs/img/console_text_3.png)
+
+### Formatted JSON Display
+
+You can format and display JSON data.
+
+**Sample Code**:
+```dart
+var user = {
+  'name': 'Alice',
+  'age': 28,
+  'address': {'city': 'Tokyo', 'zip': '100-0001'}
+};
+print(
+  "json".styled.bordered(style: BorderStyle.box(enableBottomBorder: false)),
+);
+print(user.styled.blue.bordered()); // JSON display with a blue border
+```
+
+![Result](docs/img/console_text_4.png)
+
+Using this tool, you can display debugging information in a clear and comprehensible manner. It proves especially useful when debugging multiple pieces of information simultaneously or when you need to highlight specific details.
 
 ## Contributing
 

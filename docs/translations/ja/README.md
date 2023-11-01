@@ -1,3 +1,5 @@
+[English](/README.md) | [日本語](/docs/translations/ja/README.md)
+
 # Extender Dart
 
 `Extender Dart`はDart開発者のための便利なユーティリティライブラリです。一般的な操作やエイリアスを提供し、リストやマップの不変の追加、削除、更新、挿入操作が可能です。このライブラリを使用すると、日常のタスクをより効率的に行うことができます。
@@ -133,6 +135,7 @@ numbersWithNulls.sort(SortOrder.nullsLast);  // [1, 2, 3, null, null]を返す
 ### コンソールへの表示
 
 `ConsoleText`はデバッグの際にコンソールに色付きテキストを表示するためのツールです。以下に各機能とそのサンプルコードを示します。
+`ConsoleText`クラスは`String`型のextensionであるstyledメソッドを呼び出すことで作成できます。
 
 ### 色付きテキスト
 
