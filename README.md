@@ -69,6 +69,21 @@ var insertedList = myList.insertWith(1, 10);  // [1, 10, 2, 3]
 
 // Remove an element at a specific index immutably
 var removedList = myList.removeAtWith(0);  // [2, 3]
+
+List<Person> people = [
+  Person(1, 'Alice'),
+  Person(2, 'Bob'),
+  Person(1, 'Alice'),
+  Person(3, 'Charlie'),
+];
+
+// To get a list of unique people by ID:
+var uniqueById = people.uniqueBy((p) => p.id);
+print(uniqueById); // Will print a list of unique people based on their ID.
+
+// To get a list of unique people by name:
+var uniqueByName = people.uniqueBy((p) => p.name);
+print(uniqueByName); // Will print a list of unique people based on their name.
 ```
 
 ### Map Extensions
