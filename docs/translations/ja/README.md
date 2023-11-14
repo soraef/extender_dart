@@ -1,4 +1,4 @@
-[English](/README.md) | [日本語](/docs/translations/ja/README.md)
+[English](/docs/translations/en/README.md) | [日本語](/docs/translations/ja/README.md)
 
 # Extender Dart
 
