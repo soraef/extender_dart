@@ -18,6 +18,9 @@
 ```yaml
 dependencies:
   extender_dart: latest_version
+
+dev_dependencies:
+  extender_dart_builder: latest_version
 ```
 
 Then, run:
@@ -207,6 +210,66 @@ print(user.styled.blue.bordered()); // JSON display with a blue border
 ![Result](docs/img/console_text_4.png)
 
 Using this tool, you can display debugging information in a clear and comprehensible manner. It proves especially useful when debugging multiple pieces of information simultaneously or when you need to highlight specific details.
+
+
+## Automatic Enum Generation for Class Fields
+For your README file, you can explain how to use custom annotations like `@fieldEnum` and `@freezedFieldEnum` to automatically generate enum classes based on the fields of a regular or a Freezed annotated class. Below is a template you can use as a starting section in your README to explain this functionality:
+
+---
+
+## Automatic Enum Generation for Class Fields
+
+This package provides a powerful code generation capability that allows you to automatically create enum classes that correspond to the fields of your data classes. By simply annotating your data class with `@fieldEnum` or `@freezedFieldEnum`, you can have an enum generated which can be useful for referencing fields in a type-safe manner, such as when working with forms, serialization, or database queries.
+
+### Usage
+
+To use this feature, follow these steps:
+
+1. Annotate your class with `@fieldEnum` to trigger the generation of an enum class that lists all its fields.
+
+    Example:
+    ```dart
+    // @fieldEnum to annotate and generate UserField enum
+    @fieldEnum
+    class User {
+      String name;
+      int age;
+      String? email;
+      String? phone;
+
+      User({
+        required this.name,
+        required this.age,
+        this.email,
+        this.phone,
+      });
+    }
+    // This will generate:
+    // enum UserField { name, age, email, phone }
+    ```
+
+2. For Freezed classes, use `@freezedFieldEnum` alongside the `@freezed` annotation to achieve the same.
+
+    Example:
+    ```dart
+    // @freezedFieldEnum to annotate and generate FreezedUserField enum
+    @freezed
+    @freezedFieldEnum
+    class FreezedUser with _$FreezedUser {
+      const FreezedUser._();
+      const factory FreezedUser({
+        required String name,
+        required int age,
+        required String? email,
+        required String? phone,
+      }) = _FreezedUser;
+    }
+    // This will generate:
+    // enum FreezedUserField { name, age, email, phone }
+    ```
+
+
+
 
 ## Contributing
 
