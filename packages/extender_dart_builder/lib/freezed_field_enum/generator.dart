@@ -4,7 +4,8 @@ import 'package:analyzer/dart/element/element.dart';
 import 'package:build/build.dart';
 import 'package:extender_dart/extender_dart.dart';
 
-class ClassFieldEnumGenerator extends GeneratorForAnnotation<FieldEnum> {
+class FreezedFieldEnumGenerator
+    extends GeneratorForAnnotation<FreezedFieldEnum> {
   @override
   generateForAnnotatedElement(
     Element element,
@@ -18,12 +19,20 @@ class ClassFieldEnumGenerator extends GeneratorForAnnotation<FieldEnum> {
           element: element);
     }
 
-    final fields = element.fields
-        .where((field) => !field.isStatic && !field.isSynthetic)
-        .map((field) => field.name)
-        .toList();
+    Set<String> fields = {};
 
-    // enumの文字列を生成
+    for (var interface in (element).constructors) {
+      for (final param in interface.parameters) {
+        fields.add(param.name);
+      }
+    }
+
+    if (fields.isEmpty) {
+      throw InvalidGenerationSourceError(
+        "There's no field in ${element.name}.",
+      );
+    }
+
     final enumName = '${element.name}Field';
     final enumContent = fields.map((name) => '  $name').join(',\n');
 

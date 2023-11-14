@@ -1,7 +1,9 @@
 builders:
-  hello_code_gen:
+  extender_dart_builder:
+    target: ":extender_dart_builder"
     import: "package:extender_dart_builder/builder.dart"
     builder_factories: ["extenderDartBuilder"]
-    build_extensions: {".dart": [".g.dart"]}
+    build_extensions: {".dart": [".extender_dart.g.part"]}
     auto_apply: dependents
+    build_to: cache
     applies_builders: ["source_gen|combining_builder"]
