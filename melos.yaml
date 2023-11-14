@@ -1,0 +1,18 @@
+name: extender_dart
+
+packages:
+  - packages/**
+
+sdkPath: .fvm/flutter_sdk
+
+scripts:
+  analyze: melos exec -- "dart analyze ."
+  clean: melos exec -- "fvm flutter clean"
+
+  # Update packages
+  get: melos exec -- "fvm flutter pub get" 
+  upgrade: melos exec -- "fvm flutter pub upgrade"
+
+  # Run tests
+  runner_watch: melos exec -- "fvm flutter pub run build_runner watch --delete-conflicting-outputs"
+  runner_build: melos exec -- "fvm flutter pub run build_runner build --delete-conflicting-outputs"

@@ -1,0 +1,3 @@
+class ClassFieldEnum {
+  const ClassFieldEnum();
+}
