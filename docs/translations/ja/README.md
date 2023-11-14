@@ -195,6 +195,64 @@ print(user.styled.blue.bordered()); // 青色でボーダー付きのJSON表示
 
 このツールを使用することで、デバッグ情報を一目でわかりやすく表示することができます。特に複数の情報を同時にデバッグする際や、特定の情報を強調表示する際に非常に便利です。
 
+## クラスフィールドに対応したEnumの自動生成
+もちろんです。以下にそのREADMEセクションの日本語訳を示します。
+
+---
+
+## クラスフィールドに対応したEnumの自動生成
+
+このパッケージは、データクラスのフィールドに対応したenumクラスを自動的に作成する強力なコード生成機能を提供します。`@fieldEnum`や`@freezedFieldEnum`でデータクラスをアノテートするだけで、型安全な方法でフィールドを参照する際に便利なenumが生成されます。これは、フォーム、シリアライゼーション、データベースクエリを扱う際に特に有用です。
+
+### 使い方
+
+この機能を使用するには、以下の手順に従ってください：
+
+1. クラスに`@fieldEnum`をアノテートして、そのフィールドをすべてリストするenumクラスの生成をトリガーします。
+
+    例：
+    ```dart
+    // UserField enumを生成するために@fieldEnumをアノテートする
+    @fieldEnum
+    class User {
+      String name;
+      int age;
+      String? email;
+      String? phone;
+
+      User({
+        required this.name,
+        required this.age,
+        this.email,
+        this.phone,
+      });
+    }
+    // これにより以下が生成されます：
+    // enum UserField { name, age, email, phone }
+    ```
+
+2. Freezedクラスに対しては、`@freezedFieldEnum`を`@freezed`アノテーションと一緒に使用します。
+
+    例：
+    ```dart
+    // FreezedUserField enumを生成するために@freezedFieldEnumをアノテートする
+    @freezed
+    @freezedFieldEnum
+    class FreezedUser with _$FreezedUser {
+      const FreezedUser._();
+      const factory FreezedUser({
+        required String name,
+        required int age,
+        required String? email,
+        required String? phone,
+      }) = _FreezedUser;
+    }
+    // これにより以下が生成されます：
+    // enum FreezedUserField { name, age, email, phone }
+    ```
+
+
+
 ## 貢献
 
 `Extender Dart`はオープンソースのプロジェクトです。新しい機能や改善のアイディアがあれば、ぜひご貢献ください。バグレポートや機能リクエストはもちろん、新しいデータ型の拡張を提案してコミュニティと共有することも歓迎します。
