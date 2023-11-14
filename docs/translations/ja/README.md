@@ -4,7 +4,7 @@
 
 `Extender Dart`はDart開発者のための便利なユーティリティライブラリです。一般的な操作やエイリアスを提供し、リストやマップの不変の追加、削除、更新、挿入操作が可能です。このライブラリを使用すると、日常のタスクをより効率的に行うことができます。
 
-## 主な機能
+# 主な機能
 
 - **共通操作の簡略化**: よく使用される操作を簡単に行えます。
 - **多彩なエイリアス**: `int`の時間エイリアスや`String`の型変換ヘルパーなど、さまざまなデータ型に対するエイリアスが含まれています。
@@ -12,7 +12,7 @@
 - **マップ操作の拡張**: マップに対する不変の操作が提供されています。
 - **ソートユーティリティ**: null値を含むリストも考慮したソートが簡単に行えます。
 
-## インストール
+# インストール
 
 ```yaml
 dependencies:
@@ -27,11 +27,11 @@ pub get
 
 を実行してください。
 
-## 使い方
+# 使い方
 
-### エイリアス
+## エイリアス
 
-#### Intのエイリアス
+### Intのエイリアス
 整数を期間として扱うためのエイリアスを使用できます。
 
 ```dart
@@ -41,7 +41,7 @@ var fiveMinutes = 5.minutes;  // Duration(minutes: 5)を返す
 var twoHours = 2.h;  // Duration(hours: 2)を返す
 ```
 
-#### Stringのエイリアス
+### Stringのエイリアス
 文字列の型変換や検証を簡単に行うためのエイリアスです。
 
 ```dart
@@ -53,7 +53,7 @@ bool isItDouble = "12.34".isDouble;  // 文字列が有効な小数かどうか�
 var dateTimeValue = "2023-10-12T14:30:00Z".toDateTimeOrNull();  // 有効な場合にDateTimeに変換
 ```
 
-### リストの拡張
+## リストの拡張
 
 ```dart
 import 'package:extender_dart/extender_dart.dart';
@@ -73,7 +73,7 @@ var insertedList = myList.insertWith(1, 10);  // [1, 10, 2, 3]を返す
 var removedList = myList.removeAtWith(0);  // [2, 3]を返す
 ```
 
-### マップの拡張
+## マップの拡張
 
 ```dart
 import 'package:extender_dart/extender_dart.dart';
@@ -93,11 +93,11 @@ var reducedMap = myMap.removeWith('a');  // {'b': 2}を返す
 var updatedMap = myMap.updateWith('b', (value) => value * 2);  // {'a': 1, 'b': 4}を返す
 ```
 
-### ソート操作
+## ソート操作
 
 `Extender Dart`にはソート操作を簡略化するユーティリティが含まれています。
 
-#### 昇順・降順のソート
+### 昇順・降順のソート
 
 リストの昇順・降順ソートを簡単に行えます。
 
@@ -109,7 +109,7 @@ numbers.sort(SortOrder.asc);  // [1, 2, 3, 4, 5]を返す
 numbers.sort(SortOrder.desc); // [5, 4, 3, 2, 1]を返す
 ```
 
-#### プロパティに基づくソート
+### プロパティに基づくソート
 
 例としてMapでのソートを示します。
 
@@ -122,7 +122,7 @@ List<Map<String, int>> persons = [
 persons.sort(SortOrder.pick<Map>((e) => e["age"]).asc);  // [{"age": 10}, {"age": 20}, {"age": 30}]を返す
 ```
 
-#### Nullの処理
+### Nullの処理
 
 null値を考慮したソートが可能です。
 
@@ -132,7 +132,7 @@ numbersWithNulls.sort(SortOrder.nullsFirst); // [null, null, 1, 2, 3]を返す
 numbersWithNulls.sort(SortOrder.nullsLast);  // [1, 2, 3, null, null]を返す
 ```
 
-### コンソールへの表示
+## コンソールへの表示
 
 `ConsoleText`はデバッグの際にコンソールに色付きテキストを表示するためのツールです。以下に各機能とそのサンプルコードを示します。
 `ConsoleText`クラスは`String`型のextensionであるstyledメソッドを呼び出すことで作成できます。
@@ -195,10 +195,6 @@ print(user.styled.blue.bordered()); // 青色でボーダー付きのJSON表示
 
 このツールを使用することで、デバッグ情報を一目でわかりやすく表示することができます。特に複数の情報を同時にデバッグする際や、特定の情報を強調表示する際に非常に便利です。
 
-## クラスフィールドに対応したEnumの自動生成
-もちろんです。以下にそのREADMEセクションの日本語訳を示します。
-
----
 
 ## クラスフィールドに対応したEnumの自動生成
 
