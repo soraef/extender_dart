@@ -6,3 +6,7 @@
 ## 0.0.2
 
 * FIX: fix warning
+
+## 0.0.3
+
+* FIX: dependency version
