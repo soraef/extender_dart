@@ -25,5 +25,6 @@ export 'src/extensions/universal_extension.dart';
 
 export 'src/classes/sort_order.dart';
 export 'src/classes/console_text.dart';
+export 'src/classes/indexed_collection.dart';
 
 export 'src/annotations/field_enum.dart';

@@ -30,3 +30,6 @@
 ## 0.0.8
 * FEAT: Add IndexedCollection class for indexing and
 navigation
+
+## 0.0.9
+* FIX: Fix dependency
