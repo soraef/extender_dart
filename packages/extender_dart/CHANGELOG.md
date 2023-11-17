@@ -26,3 +26,7 @@
 
 ## 0.0.7
 * FEAT: Add `wait()`, `chunk(int size)`, and `flatten()` to ListExtension
+
+## 0.0.8
+* FEAT: Add IndexedCollection class for indexing and
+navigation
