@@ -23,3 +23,6 @@
 
 ## 0.0.6
 * FIX: Add freezedFieldEnum annotation to generate freezed class field
+
+## 0.0.7
+* FEAT: Add `wait()`, `chunk(int size)`, and `flatten()` to ListExtension
