@@ -91,6 +91,12 @@ class IndexedCollection<T> {
     return IndexedCollection(updatedItems, cursor);
   }
 
+  // Check if the cursor is at the last item
+  bool get isLast => cursor == items.length - 1;
+
+  // Check if the cursor is at the first item
+  bool get isFirst => cursor == 0;
+
   @override
   String toString() => 'IndexedCollection(cursor: $cursor, items: $items)';
 }
