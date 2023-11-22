@@ -33,3 +33,7 @@ navigation
 
 ## 0.0.9
 * FIX: Fix dependency
+
+## 0.0.10
+* FEAT: Add delayed method to DurationExtension
+* FEAT: Add isFirst and isLast properties to IndexedCollection class
