@@ -1,5 +1,7 @@
+import 'dart:async';
 import 'dart:convert';
 import 'dart:math';
+import 'dart:developer' as developer;
 
 import 'package:extender_dart/extender_dart.dart';
 
@@ -193,6 +195,28 @@ class ConsoleText {
   }) {
     var borderedText = style.createBorderedText(_text);
     return _copy(borderedText);
+  }
+
+  ConsoleText log({
+    DateTime? time,
+    int? sequenceNumber,
+    int level = 0,
+    String name = '',
+    Zone? zone,
+    Object? error,
+    StackTrace? stackTrace,
+  }) {
+    developer.log(
+      _text,
+      time: time,
+      sequenceNumber: sequenceNumber,
+      level: level,
+      name: name,
+      zone: zone,
+      error: error,
+      stackTrace: stackTrace,
+    );
+    return this;
   }
 
   @override
