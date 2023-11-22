@@ -1,6 +1,6 @@
 name: extender_dart
 description: A utility library for Dart developers, offering an extensive range of commonly used operations and aliases. Designed to streamline daily coding tasks and enhance productivity.
-version: 0.0.10
+version: 0.0.11
 homepage: https://github.com/soraef/extender_dart
 
 environment:

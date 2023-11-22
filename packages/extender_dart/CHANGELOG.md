@@ -37,3 +37,6 @@ navigation
 ## 0.0.10
 * FEAT: Add delayed method to DurationExtension
 * FEAT: Add isFirst and isLast properties to IndexedCollection class
+
+## 0.0.11
+* FEAT: Add `log` method to `ConsoleText` class
