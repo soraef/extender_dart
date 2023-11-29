@@ -47,7 +47,7 @@ extension StringExtension on String {
     return DateTime.tryParse(this) != null;
   }
 
-  Uri toUriOrNull() {
+  Uri? toUriOrNull() {
     // Try to parse the string as a Uri.
     return Uri.tryParse(this)!;
   }
